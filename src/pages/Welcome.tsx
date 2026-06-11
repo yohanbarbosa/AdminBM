@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-
+import Footer from "../components/Footer.tsx"
 type dataProps = {
     d : string,
     size?:string | number,
@@ -140,44 +140,44 @@ export default function Welcome() {
 
   const features = [
     {
-      icon: icons.chart,
+      icon: "mdi:graph-line",
       title: "Real-Time Analytics",
-      desc: "Track sales, top products, and revenue trends at a glance. Make decisions backed by live data, not yesterday's spreadsheet.",
+      desc: "Sigue las ventas, los principales productos y las tendencias de ingresos de un vistazo. Toma decisiones respaldadas por datos en vivo, no por la hoja de cálculo de ayer.",
       color: "text-teal-400",
       bg: "bg-teal-500/10",
     },
     {
-      icon: icons.box,
+      icon: "mdi:clipboard-list-outline",
       title: "Inventory Control",
-      desc: "Get automatic low-stock alerts, manage suppliers, and sync your physical and online stock in one place.",
+      desc: "Recibe alertas automáticas de poco stock, gestiona proveedores y sincroniza tu stock físico y online en un solo lugar.",
       color: "text-amber-400",
       bg: "bg-amber-500/10",
     },
     {
-      icon: icons.users,
+      icon: "mdi:people-group",
       title: "Staff & Roles",
-      desc: "Assign roles, set permissions, and keep track of who does what in your store — across one location or many.",
+      desc: "Asigna roles, establece permisos y lleva un control de quién hace qué en tu tienda — en una ubicación o en varias.",
       color: "text-violet-400",
       bg: "bg-violet-500/10",
     },
     {
-      icon: icons.tag,
+      icon: "mdi:label-percent-outline",
       title: "Product Catalog",
-      desc: "Organize products with variants, categories, barcodes, and custom pricing rules built for retail, not enterprise.",
+      desc: "Organiza los productos con variantes, categorías, códigos de barras y reglas de precios personalizadas diseñadas para retail, no para empresas.",
       color: "text-rose-400",
       bg: "bg-rose-500/10",
     },
     {
-      icon: icons.dollar,
+      icon: "mdi:dollar",
       title: "Sales & Invoicing",
-      desc: "Process sales, issue receipts, apply discounts, and export reports in seconds — from any device.",
+      desc: "Procesa ventas, emite recibos, aplica descuentos y exporta informes en segundos — desde cualquier dispositivo.",
       color: "text-teal-400",
       bg: "bg-teal-500/10",
     },
     {
-      icon: icons.shield,
+      icon: "mdi:database",
       title: "Data You Own",
-      desc: "Your store's data is yours. Encrypted at rest, exportable at any time, with no vendor lock-in.",
+      desc: "Los datos de tu tienda son tuyos. Cifrado en reposo, exportable en cualquier momento, sin bloqueo por parte del proveedor.",
       color: "text-amber-400",
       bg: "bg-amber-500/10",
     },
@@ -248,15 +248,15 @@ export default function Welcome() {
           </div>
 
           <div className="hidden md:flex items-center gap-8 text-sm text-white/60">
-            {["Features", "Pricing", "Docs", "About"].map(l => (
+            {["Funcionalidades", "Precios", "Documentacion", "Sobre Nosostros"].map(l => (
               <a key={l} href="#" className="hover:text-white transition-colors">{l}</a>
             ))}
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <a href="#" className="text-sm text-white/60 hover:text-white transition-colors px-4 py-2">Sign in</a>
+            <a href="#" className="text-sm text-white/60 hover:text-white transition-colors px-4 py-2">Iniciar sesion</a>
             <a href="#" className="text-sm font-semibold bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] px-5 py-2 rounded-lg transition-colors">
-              Get started free
+              Empezar gratis
             </a>
           </div>
 
@@ -267,11 +267,11 @@ export default function Welcome() {
 
         {menuOpen && (
           <div className="md:hidden bg-[#111C2E] border-t border-white/5 px-6 py-4 space-y-3">
-            {["Features", "Pricing", "Docs", "About", "Sign in"].map(l => (
+            {["Funcionalidades", "Precios", "Documentacion", "Sobre Nosostros"].map(l => (
               <a key={l} href="#" className="block text-sm text-white/60 py-1">{l}</a>
             ))}
             <a href="#" className="block text-sm font-semibold bg-teal-500 text-[#0F1B2D] px-5 py-2.5 rounded-lg text-center mt-2">
-              Get started free
+            Empezar gratis
             </a>
           </div>
         )}
@@ -282,34 +282,35 @@ export default function Welcome() {
         {/* grid bg */}
         <div className="absolute inset-0 opacity-[0.04]"
              style={{ backgroundImage: "linear-gradient(#00C9A7 1px, transparent 1px), linear-gradient(90deg, #00C9A7 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] blur-[120px] opacity-10 bg-teal-400 pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 blur-[120px] opacity-10 bg-teal-400 pointer-events-none" />
 
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-16">
             <span className="inline-flex items-center gap-2 text-xs font-semibold text-teal-400 bg-teal-500/10 border border-teal-500/20 rounded-full px-4 py-1.5 mb-6 uppercase tracking-widest">
-              <Icon2 d={icons.zap} size={12} fill="#00C9A7" stroke="none" />
-              Built for small & medium stores
+              <Icon icon="mdi:thunder" width={18} />
+              Construido para tiendas pequeñas y medianas
             </span>
 
             <h1 className="text-5xl md:text-7xl font-extrabold leading-[1.05] tracking-tight mb-6 max-w-3xl">
-              Run your store.<br />
+              Lleva tu tienda en tu telefono.<br />
               <span className="text-transparent bg-clip-text"
                     style={{ backgroundImage: "linear-gradient(135deg, #00C9A7 0%, #00E5C4 50%, #F59E0B 100%)" }}>
-                Not your spreadsheets.
+                No en tus hojas.
               </span>
             </h1>
 
             <p className="text-lg md:text-xl text-white/50 max-w-xl leading-relaxed mb-10">
-              StoreAdmin gives independent retailers the same operational power as big chains — without the enterprise price tag or the week-long setup.
+            AdminBM ofrece a los minoristas independientes la misma capacidad operativa
+            que las grandes cadenas, sin el precio de las grandes empresas ni la configuración que dura una semana.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <a href="#" className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-8 py-4 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25">
-                Start for free
-                <Icon2 d={icons.arrow} size={16} stroke="#0F1B2D" />
+                Empieza gratis
+                <Icon icon="mdi:arrow-right-thin" width={20} />
               </a>
               <a href="#" className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl transition-all text-sm">
-                See how it works
+                Mira como funciona !
               </a>
             </div>
 
@@ -322,9 +323,9 @@ export default function Welcome() {
       </section>
 
       {/* ── SOCIAL PROOF BAR ── */}
-      <div className="border-y border-white/5 bg-white/[0.02] py-5 px-6">
+      <div className="border-y border-white/5 bg-white/2 py-5 px-6">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-center gap-8 text-white/25 text-xs font-medium uppercase tracking-widest">
-          {["Trusted by 2,400+ stores", "∙", "Avg setup: 15 minutes", "∙", "99.9% uptime SLA", "∙", "GDPR compliant"].map((t, i) => (
+          {["Configuración media: 15 minutos", "∙", "SLA de tiempo de actividad del 99,9%", "∙", "Cumple con el GDPR"].map((t, i) => (
             <span key={i} className={t === "∙" ? "hidden md:block" : "text-white/30"}>{t}</span>
           ))}
         </div>
@@ -334,21 +335,22 @@ export default function Welcome() {
       <section className="py-24 px-6" id="features">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs text-teal-400 font-semibold uppercase tracking-[0.2em] mb-3">Everything you need</p>
+            <p className="text-xs text-teal-400 font-semibold uppercase tracking-[0.2em] mb-3">Todo lo que necesitas</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-              One system for the whole store
+              Un sistema para la tienda
             </h2>
             <p className="mt-4 text-white/40 max-w-lg mx-auto">
-              Stop stitching together five different tools. StoreAdmin handles inventory, sales, staff, and analytics in a single tab.
+              Deja de usar varias herramientas diferentes.
+              AdminBM te permite gestionar inventario, ventas, personal y análisis en un solo lugar.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {features.map(f => (
               <div key={f.title}
-                   className="group rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.05] p-6 transition-all duration-300 hover:border-white/10">
+                   className="group rounded-2xl border border-white/5 bg-white/2 hover:bg-white/5 p-6 transition-all duration-300 hover:border-white/10">
                 <div className={`w-10 h-10 rounded-xl ${f.bg} flex items-center justify-center mb-4`}>
-                  <Icon2 d={f.icon} size={18} stroke={f.color.replace("text-", "").includes("teal") ? "#00C9A7" : f.color.includes("amber") ? "#F59E0B" : f.color.includes("violet") ? "#A78BFA" : "#FB7185"} />
+                 <Icon icon={f.icon} width={25}/>
                 </div>
                 <h3 className="font-bold text-base mb-2">{f.title}</h3>
                 <p className="text-sm text-white/40 leading-relaxed">{f.desc}</p>
@@ -359,11 +361,11 @@ export default function Welcome() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="py-24 px-6 bg-white/[0.015] border-y border-white/5">
+      <section className="py-24 px-6 bg-white/1.5 border-y border-white/5">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-xs text-teal-400 font-semibold uppercase tracking-[0.2em] mb-3">Simple by design</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">Up and running in minutes</h2>
+            <p className="text-xs text-teal-400 font-semibold uppercase tracking-[0.2em] mb-3">Simple de diseñar</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">En marcha en minutos</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -372,7 +374,7 @@ export default function Welcome() {
               { step: "03", title: "Start selling", desc: "Your dashboard is live. Start processing orders, tracking stock, and watching your revenue in real time." },
             ].map(s => (
               <div key={s.step} className="flex gap-5">
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                   <span className="text-5xl font-black text-transparent"
                         style={{ WebkitTextStroke: "1px rgba(0,201,167,0.3)" }}>
                     {s.step}
@@ -389,7 +391,7 @@ export default function Welcome() {
       </section>
 
       {/* ── TESTIMONIALS ── */}
-      <section className="py-24 px-6">
+      {/* <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-xs text-teal-400 font-semibold uppercase tracking-[0.2em] mb-3">From store owners</p>
@@ -412,10 +414,10 @@ export default function Welcome() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── PRICING ── */}
-      <section className="py-24 px-6 border-t border-white/5" id="pricing">
+      {/* <section className="py-24 px-6 border-t border-white/5" id="pricing">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-xs text-teal-400 font-semibold uppercase tracking-[0.2em] mb-3">Pricing</p>
@@ -458,7 +460,7 @@ export default function Welcome() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── CTA BANNER ── */}
       <section className="py-20 px-6">
@@ -466,62 +468,21 @@ export default function Welcome() {
           <div className="absolute inset-0 -z-10 blur-3xl opacity-15 rounded-full"
                style={{ background: "radial-gradient(ellipse, #00C9A7 0%, transparent 70%)" }} />
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-5">
-            Your store deserves better tools.
+            Tu tienda merece mejores herramientas.
           </h2>
           <p className="text-white/40 mb-8 text-lg">
-            Join 2,400+ independent retailers who switched to StoreAdmin and never looked back.
+           Únete a los minoristas independientes que cambiaron a AdminBM y nunca miraron atrás.
           </p>
           <a href="#"
              className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-10 py-4 rounded-xl transition-all text-base shadow-xl shadow-teal-500/30">
-            Get started — it's free
+            Empieza — Es gratis
             <Icon2 d={icons.arrow} size={18} stroke="#0F1B2D" />
           </a>
-          <p className="mt-4 text-xs text-white/20">No credit card · 14-day trial · Cancel anytime</p>
+          <p className="mt-4 text-xs text-white/20">Sin tarjeta de crédito · Prueba de 10 días · Cancela en cualquier momento</p>
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="border-t border-white/5 py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
-            <div className="max-w-xs">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-7 h-7 rounded-lg bg-teal-500 flex items-center justify-center">
-                  <Icon2 d={icons.store} size={14} stroke="white" />
-                </div>
-                <span className="font-bold">Store<span className="text-teal-400">Admin</span></span>
-              </div>
-              <p className="text-sm text-white/30 leading-relaxed">
-                The operating system for independent retail. Built by store owners, for store owners.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
-              {[
-                { title: "Product", links: ["Features", "Pricing", "Changelog", "Roadmap"] },
-                { title: "Company", links: ["About", "Blog", "Careers", "Press"] },
-                { title: "Support", links: ["Docs", "Help Center", "Status", "Contact"] },
-              ].map(col => (
-                <div key={col.title}>
-                  <p className="font-semibold text-white/60 mb-3 uppercase text-xs tracking-widest">{col.title}</p>
-                  <ul className="space-y-2">
-                    {col.links.map(l => (
-                      <li key={l}><a href="#" className="text-white/30 hover:text-white transition-colors">{l}</a></li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3 pt-6 border-t border-white/5 text-xs text-white/20">
-            <p>© 2026 StoreAdmin. All rights reserved.</p>
-            <div className="flex gap-5">
-              <a href="#" className="hover:text-white transition-colors">Privacy</a>
-              <a href="#" className="hover:text-white transition-colors">Terms</a>
-              <a href="#" className="hover:text-white transition-colors">Cookies</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+        <Footer/>
     </div>
   );
 }
