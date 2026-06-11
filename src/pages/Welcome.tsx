@@ -1,37 +1,7 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Footer from "../components/Footer.tsx"
-type dataProps = {
-    d : string,
-    size?:string | number,
-    stroke?:string,
-    fill?:string,
-}
 
-
-// ── tiny icon components (inline SVG, no external deps) ──────────────────────
-const Icon2 = ({ d, size = 20, stroke = "currentColor", fill = "none" } : dataProps) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill={fill} stroke={stroke} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
-    <path d={d} />
-  </svg>
-);
-
-const icons = {
-  menu:      "M3 12h18M3 6h18M3 18h18",
-  x:         "M18 6L6 18M6 6l12 12",
-  chart:     "M3 3v18h18M7 16l4-4 4 4 4-6",
-  box:       "M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z",
-  users:     "M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75",
-  tag:       "M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82zM7 7h.01",
-  zap:       "M13 2L3 14h9l-1 8 10-12h-9l1-8z",
-  shield:    "M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z",
-  arrow:     "M5 12h14M12 5l7 7-7 7",
-  check:     "M20 6L9 17l-5-5",
-  store:     "M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM9 22V12h6v10",
-  bell:      "M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 0 1-3.46 0",
-  trending:  "M23 6l-9.5 9.5-5-5L1 18",
-  dollar:    "M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6",
-};
 
 // ── animated dashboard widget ─────────────────────────────────────────────────
 function DashboardPreview() {
@@ -55,7 +25,7 @@ function DashboardPreview() {
           <span className="w-3 h-3 rounded-full bg-green-400/70" />
           <span className="ml-4 text-xs text-white/30 font-mono">StoreAdmin — Dashboard</span>
           <div className="ml-auto flex items-center gap-3 text-white/30">
-            <Icon2 d={icons.bell} size={14} />
+            <Icon icon="mdi:bell" width={14} />
             <div className="w-6 h-6 rounded-full bg-teal-500/50 text-[10px] text-teal-200 flex items-center justify-center font-bold">A</div>
           </div>
         </div>
@@ -261,7 +231,7 @@ export default function Welcome() {
           </div>
 
           <button className="md:hidden text-white/60" onClick={() => setMenuOpen(o => !o)}>
-            <Icon2 d={menuOpen ? icons.x : icons.menu} size={22} />
+            <Icon icon={menuOpen? "mdi:cancel-bold" : "mdi:menu"} width={22} />
           </button>
         </div>
 
@@ -476,7 +446,7 @@ export default function Welcome() {
           <a href="#"
              className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-10 py-4 rounded-xl transition-all text-base shadow-xl shadow-teal-500/30">
             Empieza — Es gratis
-            <Icon2 d={icons.arrow} size={18} stroke="#0F1B2D" />
+            <Icon icon="mdi:arrow-right-thin" width={18} stroke="#0F1B2D" />
           </a>
           <p className="mt-4 text-xs text-white/20">Sin tarjeta de crédito · Prueba de 10 días · Cancela en cualquier momento</p>
         </div>
