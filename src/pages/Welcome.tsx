@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
 import Footer from "../components/Footer.tsx"
+import { useNavigate } from "react-router-dom";
 
 
 // ── animated dashboard widget ─────────────────────────────────────────────────
@@ -107,7 +108,7 @@ function DashboardPreview() {
 // ── main page ─────────────────────────────────────────────────────────────────
 export default function Welcome() {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   const features = [
     {
       icon: "mdi:graph-line",
@@ -153,56 +154,6 @@ export default function Welcome() {
     },
   ];
 
-  const plans = [
-    {
-      name: "Starter",
-      price: "$19",
-      period: "/mo",
-      desc: "Perfect for solo shop owners getting started.",
-      features: ["1 location", "Up to 500 products", "Basic reports", "Email support"],
-      cta: "Start free trial",
-      highlight: false,
-    },
-    {
-      name: "Growth",
-      price: "$49",
-      period: "/mo",
-      desc: "For growing stores that need more control.",
-      features: ["Up to 3 locations", "Unlimited products", "Advanced analytics", "Staff roles & permissions", "Priority support"],
-      cta: "Start free trial",
-      highlight: true,
-    },
-    {
-      name: "Pro",
-      price: "$99",
-      period: "/mo",
-      desc: "Multi-branch businesses with custom needs.",
-      features: ["Unlimited locations", "API access", "Custom integrations", "Dedicated account manager", "SLA guarantee"],
-      cta: "Contact sales",
-      highlight: false,
-    },
-  ];
-
-  const testimonials = [
-    {
-      name: "Laura Méndez",
-      role: "Owner, La Tienda Verde",
-      quote: "We cut our inventory reconciliation from 4 hours to 20 minutes. Our staff actually loves using it.",
-      avatar: "LM",
-    },
-    {
-      name: "Roberto Kim",
-      role: "Manager, KimTech Supplies",
-      quote: "Finally a system built for stores like ours. No bloat, just what we actually need every day.",
-      avatar: "RK",
-    },
-    {
-      name: "Sandra Ortiz",
-      role: "Founder, Boutique Naranja",
-      quote: "The live sales dashboard changed how I make buying decisions. I can see what's moving in real time.",
-      avatar: "SO",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-[#0F1B2D] text-white font-['Inter',sans-serif] overflow-x-hidden">
@@ -225,9 +176,9 @@ export default function Welcome() {
 
           <div className="hidden md:flex items-center gap-3">
             <a href="#" className="text-sm text-white/60 hover:text-white transition-colors px-4 py-2">Iniciar sesion</a>
-            <a href="#" className="text-sm font-semibold bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] px-5 py-2 rounded-lg transition-colors">
+            <button onClick={()=>{navigate("/createSaas")}} className="text-sm font-semibold bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] px-5 py-2 rounded-lg transition-colors">
               Empezar gratis
-            </a>
+            </button>
           </div>
 
           <button className="md:hidden text-white/60" onClick={() => setMenuOpen(o => !o)}>
@@ -248,11 +199,7 @@ export default function Welcome() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="pt-32 pb-24 px-6 relative overflow-hidden">
-        {/* grid bg */}
-        <div className="absolute inset-0 opacity-[0.04]"
-             style={{ backgroundImage: "linear-gradient(#00C9A7 1px, transparent 1px), linear-gradient(90deg, #00C9A7 1px, transparent 1px)", backgroundSize: "48px 48px" }} />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 blur-[120px] opacity-10 bg-teal-400 pointer-events-none" />
+      <section className="pt-32 pb-24 px-6 relative  overflow-hidden">
 
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center text-center mb-16">
@@ -275,13 +222,13 @@ export default function Welcome() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href="#" className="flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-8 py-4 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25">
+              <button   className="cursor-pointer flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-8 py-4 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25">
                 Empieza gratis
                 <Icon icon="mdi:arrow-right-thin" width={20} />
-              </a>
-              <a href="#" className="flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl transition-all text-sm">
+              </button>
+              <button className="cursor-pointer flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl transition-all text-sm">
                 Mira como funciona !
-              </a>
+              </button>
             </div>
 
             <p className="mt-4 text-xs text-white/25">No credit card required · 14-day free trial · Cancel anytime</p>
@@ -444,7 +391,7 @@ export default function Welcome() {
            Únete a los minoristas independientes que cambiaron a AdminBM y nunca miraron atrás.
           </p>
           <a href="#"
-             className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-10 py-4 rounded-xl transition-all text-base shadow-xl shadow-teal-500/30">
+             className=" cursor-pointer inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] font-bold px-10 py-4 rounded-xl transition-all text-base shadow-xl shadow-teal-500/30">
             Empieza — Es gratis
             <Icon icon="mdi:arrow-right-thin" width={18} stroke="#0F1B2D" />
           </a>
