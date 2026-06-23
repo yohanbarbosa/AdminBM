@@ -86,7 +86,7 @@ function DashboardPreview() {
               { id: "#3040", customer: "Carlos R.", product: "Wireless Mouse", amount: "$32", status: "Pending" },
               { id: "#3039", customer: "Ana L.", product: "USB Hub × 2", amount: "$58", status: "Paid" },
             ].map(o => (
-              <div key={o.id} className="flex items-center gap-3 px-4 py-2 border-b border-white/[0.04] last:border-0">
+              <div key={o.id} className="flex items-center gap-3 px-4 py-2 border-b border-white/4 last:border-0">
                 <span className="text-[10px] font-mono text-white/30 w-10">{o.id}</span>
                 <span className="text-[11px] text-white/70 flex-1">{o.customer}</span>
                 <span className="text-[11px] text-white/40 flex-1 hidden sm:block">{o.product}</span>
