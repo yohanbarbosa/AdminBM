@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 type Errors = Record<string, string>;
 
 export default function index() {
   const [passed, setPassed] = useState(1);
   const [errors, setErrors] = useState<Errors>({});
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     nameCompany: "",
     firstName: "",
@@ -82,6 +84,7 @@ export default function index() {
     if (!validateForm()) {
       return;
     }
+    navigate("/dashboard");
   };
 
   return (
@@ -135,7 +138,7 @@ export default function index() {
               onClick={() => {
                 handleSubmit();
               }}
-              className="w-full flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 active:bg-teal-600 text-[#0F1B2D] font-bold px-6 py-3 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25"
+              className=" cursor-pointer w-full flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 active:bg-teal-600 text-[#0F1B2D] font-bold px-6 py-3 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25"
             >
               Continuar
             </button>
@@ -238,7 +241,7 @@ export default function index() {
                 onClick={() => {
                   setPassed((prev) => prev - 1);
                 }}
-                className="w-full order-2 sm:order-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-6 py-3 rounded-xl transition-all text-sm"
+                className="cursor-pointer w-full order-2 sm:order-1 flex items-center justify-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-6 py-3 rounded-xl transition-all text-sm"
               >
                 Atrás
               </button>
@@ -246,7 +249,7 @@ export default function index() {
                 onClick={() => {
                   handleSubmit();
                 }}
-                className="w-full order-1 sm:order-2 flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 active:bg-teal-600 text-[#0F1B2D] font-bold px-6 py-3 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25"
+                className="cursor-pointer w-full order-1 sm:order-2 flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 active:bg-teal-600 text-[#0F1B2D] font-bold px-6 py-3 rounded-xl transition-all text-sm shadow-lg shadow-teal-500/25"
               >
                 Continuar
               </button>

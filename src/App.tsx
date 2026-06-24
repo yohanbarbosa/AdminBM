@@ -1,6 +1,7 @@
 import { Routes,Route } from 'react-router-dom'
 import Welcome from './pages/Welcome'
 import CreateSaas from './pages/createSaas'
+import Dashboard from './pages/layouts/Dashboard'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
      <Routes>
       <Route path='/' element={<Welcome/>}/>
       <Route path='/createSaas' element={<CreateSaas/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
      </Routes>
     
   )
