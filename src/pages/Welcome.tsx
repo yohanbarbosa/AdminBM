@@ -176,7 +176,7 @@ export default function Welcome() {
 
           <div className="hidden md:flex items-center gap-3">
             <a href="#" className="text-sm text-white/60 hover:text-white transition-colors px-4 py-2">Iniciar sesion</a>
-            <button onClick={()=>{navigate("/createSaas")}} className="text-sm font-semibold bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] px-5 py-2 rounded-lg transition-colors">
+            <button onClick={()=>{navigate("/createSaas")}} className="cursor-pointer text-sm font-semibold bg-teal-500 hover:bg-teal-400 text-[#0F1B2D] px-5 py-2 rounded-lg transition-colors">
               Empezar gratis
             </button>
           </div>
