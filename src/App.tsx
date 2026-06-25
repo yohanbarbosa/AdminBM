@@ -1,7 +1,7 @@
 import { Routes,Route } from 'react-router-dom'
 import Welcome from './pages/Welcome'
 import CreateSaas from './pages/createSaas'
-import Dashboard from './pages/layouts/Dashboard'
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
