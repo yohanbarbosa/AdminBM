@@ -38,11 +38,11 @@ export default function Sidebar() {
   ];
 
   return (
-    <div className="pt-3.5 w-44 border-r-2 border-gray-300">
+    <div className="text-white pt-3.5 w-44 border-r-2 border-gray-300 bg-[#171821]">
       <ul className="ml-3 space-y-5">
         {navItems.map((itme) => (
           <li
-            className="group w-40 cursor-pointer flex items-center gap-2 hover:bg-blue-100 transition"
+            className="group w-40 cursor-pointer flex items-center gap-2 hover:bg-blue-100 hover:text-black transition"
             key={itme.id}
           >
             <span className="w-2 h-8 block group-hover:bg-blue-700 transition "></span>

@@ -4,14 +4,18 @@ import { useState } from "react";
 export default function Topbar() {
   const [keyBoard, setKeyBoard] = useState(false);
   return (
-    <header className="flex w-full justify-between px-10 py-5 border-b-2 border-b-gray-300">
+    <header className=" text-white flex w-full justify-between px-10 py-5 border-b-2 border-b-gray-300 bg-[#171821]">
       <div className="relative w-96">
         <input
           className="w-full border border-gray-400 rounded-2xl px-3 py-2 pr-10"
           placeholder="Search here..."
           type="text"
         />
-        <Icon className="top-1/2 -translate-y-1/2 right-3 absolute" icon={"mdi:search"} width={20} />
+        <Icon
+          className="top-1/2 -translate-y-1/2 right-3 absolute"
+          icon={"mdi:search"}
+          width={20}
+        />
       </div>
 
       <div className="">
@@ -28,6 +32,7 @@ export default function Topbar() {
           </div>
           <div className="relative">
             <button
+              className="cursor-pointer"
               onClick={() => {
                 setKeyBoard(!keyBoard);
               }}
@@ -40,7 +45,7 @@ export default function Topbar() {
               />
             </button>
             {keyBoard && (
-              <div className="bg-white shadow-lg rounded-lg p-2 right-0 mt-2 w-max min-w-45 absolute flex flex-col">
+              <div className="bg-[#30313a] shadow-lg rounded-lg p-2 right-0 mt-2 w-max min-w-45 absolute flex flex-col">
                 <p className="flex items-center gap-2 ml-4.5">
                   <Icon icon={"mdi:user"} width={20} /> usuario
                 </p>
